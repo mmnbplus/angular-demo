@@ -1,0 +1,107 @@
+<p>news works!</p>
+<h2>我是一个新闻组件</h2>
+<hr>
+<h3>angualr模板里面绑定数据</h3>
+{{title}}
+{{userInfo.username}}
+{{userInfo.age}}
+{{mmLength}}
+<hr>
+<h3>angualr模板里面绑定属性</h3>
+<div title="我是一个divmm">
+    鼠标描上去看一下
+</div>
+<div [title]="title">
+    鼠标描上去看一下
+</div>
+<hr>
+<h3>angualr绑定html</h3>
+{{content}}
+<div [innerHTML]="content"></div>
+<hr>
+<h3>angualr模板做简单运算</h3>
+1+2={{1+2}}
+<hr>
+<h3>angualr遍历数组</h3>
+<ul>
+    <li *ngFor="let item of mmArray">
+        {{item}}
+    </li>
+</ul>
+<ul>
+    <li *ngFor="let item of mmNBArray;let key=index">
+        {{item}} 索引{{key}}
+    </li>
+</ul>
+<h3>angualr遍历对象 & angualr *ngIf</h3>
+<ul>
+    <li *ngFor="let item of mmList">
+        名字:{{item.username}}年龄{{item.age}}
+        <span *ngIf="item.isshow!=null">是否显示{{item.isshow}}</span>
+    </li>
+</ul>
+<hr>
+<h3>angualr引入图片</h3>
+<img src="assets/images/1.png" alt="" width="100px">
+<img [src]="imgUrl" alt="" width="100px">
+<hr>
+<h3>angualr *ngSwitch</h3>
+<ul [ngSwitch]="orderstate">
+    <li *ngSwitchCase="1">支付</li>
+    <li *ngSwitchCase="2">发货</li>
+    <li *ngSwitchCase="3">收货</li>
+    <li *ngSwitchDefault>无效</li>
+</ul>
+<hr>
+<h3>条件判断[ngClass] [ngStyle]</h3>
+<div [ngClass]="{red: true}">哈哈哈</div>
+<div [ngClass]="{blue: true}">哈哈哈</div>
+<div [ngClass]="{red: flag,blue: !flag}">哈哈哈</div>
+<ul>
+    <li *ngFor="let item of mmList;let key = index" [ngClass]="{red: key == 1,blue: key == 0}">
+        名字:{{item.username}}年龄{{item.age}}
+    </li>
+</ul>
+<div [ngStyle]="{'color': 'green'}">
+    喵喵喵
+</div>
+<div [ngStyle]="{'color': mmStyle}">
+    喵喵喵
+</div>
+<hr>
+<h3>管道</h3>
+<div>{{today}}</div>
+<div>{{today | date:'yyyy-MM-dd HH:mm ss'}}</div>
+<hr>
+<h3>事件</h3>
+<button (click)="run()">事件</button>
+<div>{{woshimiaomiaoChangeData}}</div>
+<button (click)="setData()">设置数据</button>
+<hr>
+<h3>表单事件</h3>
+<input type="text" (keydown)="keyDown($event)">
+<hr>
+<h3>双向数据绑定--MVVM 只是针对表单组件</h3>
+<input type="text" [(ngModel)]="keywords">
+<div>{{keywords}}</div>
+<button (click)="changeKeywords()">改变值</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

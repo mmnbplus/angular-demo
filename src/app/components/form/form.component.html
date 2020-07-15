@@ -1,0 +1,17 @@
+<p>form works!</p>
+<h2 >人员登记系统</h2>
+<div class="people_list">
+    <ul>
+        <li>姓名: <input type="text" [(ngModel)]="peopleInfo.username"></li>
+        <li>性别 
+            <input type="radio" value="1" id="sex1" [(ngModel)]="peopleInfo.sex">
+            <label for="sex1">男</label>
+            <input type="radio" value="2" id="sex2" [(ngModel)]="peopleInfo.sex">
+            <label for="sex2">女</label>
+        </li>
+    </ul>
+    <button (click)="getValue()">获取表单内容</button>
+    <div>{{peopleInfo|json}}</div>
+</div>
+<!-- todoList -->
+
